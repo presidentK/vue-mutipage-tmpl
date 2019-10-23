@@ -1,0 +1,52 @@
+//0.5像素边框,解决移动端边框过粗的问题
+@mixin border-thin($direct,$color:black){
+  position: relative;
+  &:after{
+    content:'';
+    position: absolute;
+    @if ($direct == left) or ($direct == right){
+      top:0;
+      bottom:0;
+      transform: scaleX(.5);
+    }@else if ($direct == top) or ($direct == bottom){
+      left:0;
+      right:0;
+      transform: scaleY(.5);
+    }
+    @if $direct == left {
+      left:0;
+      transform-origin: 0 0;
+    } @else if $direct == right {
+      right:0;
+      transform-origin: 100% 0;
+    } @else if $direct == top {
+      top:0;
+      transform-origin: 0 0;
+    } @else if $direct == bottom {
+      bottom:0;
+      transform-origin: 0 100%;
+    }
+    border-#{$direct}:1px solid $color;
+  }
+}
+@mixin triangle($direct,$size,$color:black){
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -4px;
+  @if ($direct==top) or ($direct==bottom){
+    border-left:torem($size/2) solid transparent;
+    border-right:torem($size/2) solid transparent;
+  }@else if ($direct==left) or ($direct==right){
+    border-top:torem($size/2) solid transparent;
+    border-bottom:torem($size/2) solid transparent;
+  }
+  @if $direct == top{
+    border-bottom:torem($size) solid $color;
+  }@else if $direct == right{
+    border-left:torem($size) solid $color;
+  }@else if $direct == bottom{
+    border-top:torem($size) solid $color;
+  }@else if $direct == left{
+    border-right:torem($size) solid $color;
+  }
+}

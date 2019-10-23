@@ -1,0 +1,28 @@
+@import './reset';
+
+*,:before,:after{
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html,body{
+  height: 100%;
+}
+a{
+  text-decoration: none;
+}
+%fullscreen{
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:1000;
+}
+.mask{
+  @extend %fullscreen;
+  background:rgba(0,0,0,.6);
+}
+.mask-transparent{
+  @extend %fullscreen;
+  background: transparent;
+}

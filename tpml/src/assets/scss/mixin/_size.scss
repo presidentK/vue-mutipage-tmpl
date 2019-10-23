@@ -1,0 +1,7 @@
+@mixin square($size,$borderRadius:0){
+  width:torem($size);
+  height:torem($size);
+  @if $borderRadius>0{
+    border-radius: torem($borderRadius);
+  }
+}
