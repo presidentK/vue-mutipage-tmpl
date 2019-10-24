@@ -1,4 +1,4 @@
-##项目结构：
+##项目结构：  
 **build**: webpack构建相关文件  
 **config**: 项目配置  
 **src**: 项目源码，开发代码都写在此目录下
@@ -9,7 +9,7 @@
 **static**: 不经过加工，整个目录中的文件拷贝到最终生成的包中  
 **test**: e2e和单元测试
 
-##其它：
+##其它：  
 **约定**：项目默认以modules下的第一级目录名为入口js和html模板名，
 config配置文件下的entriesMap可以覆盖默认的入口js和html模板名，
 entriesMap结构中key值对应模块名，entry对应模块入口js，html
