@@ -1,7 +1,7 @@
 'use strict'
 const fs=require('fs')
 const path = require('path')
-const config = require('../config')
+const config = require('../config/index')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const packageConfig = require('../package.json')
